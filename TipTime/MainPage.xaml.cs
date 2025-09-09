@@ -1,4 +1,7 @@
-﻿namespace TipTime
+﻿using System.Numerics;
+
+
+namespace TipTime
 {
     public partial class MainPage : ContentPage
     {
@@ -7,6 +10,9 @@
         public MainPage()
         {
             InitializeComponent();
+            
+
+
         }
 
        // private void OnCounterClicked(object sender, EventArgs e)
@@ -23,8 +29,29 @@
 
      private void PorcentagemSlider_ValueChanged(object sender, ValueChangedEventArgs e)
       {
-            
-      }
+            try 
+            {
+                double porcentagem = PorcentagemSlider.Value;
+                double gorjeta;
+                double valortotal = double.Parse(ValorTotalEntry.Text);
+                gorjeta = valortotal * (porcentagem / 100);
+                //double valortotal = Concert.ToDouble(ValorTotalEnty.Text)
+                //Convert e uma classe
+                //Parse é um metodo
+                double valorfinal = valortotal + gorjeta;
+               //ValorGorjeta.Text = $"R$ {gorjeta}";
+                ValorGorjeta.Text = gorjeta.ToString("c");
+                ValorFinal.Text = $"R$  {valorfinal}";
+            }
+            catch(Exception ex) 
+            { 
+                //Toda vez que uso o comando Console.Writeline a saida vai para a consolena aba
+               //output
+              Console.WriteLine(ex.ToString());
+                //DisplayAlert("Erro", "Digitre um valor numerico", "OK");
+            }
+
+        }
 
       private void Porcentagem15Btn_Clicked(object sender, EventArgs e)
        {
@@ -45,6 +72,7 @@
         private void Porcentagem20Btn_Clicked(object sender, EventArgs e)
         {
             PorcentagemSlider.Value = 20;
+            
         }
     }
 

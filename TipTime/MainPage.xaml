@@ -18,21 +18,34 @@
                   x:Name="ValorTotalEntry"
                   Placeholder="Digite o valor total"/>
 
-              <Label
-                Text ="Gorjeta"
-                 Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
 
-               <Entry 
-                 x:Name="ValorgorjetaEntry"
-                  Placeholder="Digite o valor da gorjeta"/>
+          
+
+               <Label
+              Text=" Gorjeta" />
+
             <Label
-               Text="Total"
-                  
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+              x:Name =" ValorGorjeta"
+               Text="00.00" />
+
+
+
+            <Label
+               Text=" Total" />
+
+              <Label      
+              x:Name="ValorFinal"
+                 Text="00.00"
+                     />
+
+            <Label 
+                Text="PorcentagemGorjeta"
+                />
+            <Label
+                x:Name="PorcentagemLabel"
+                Text="15%"
+                />
+
 
             <Slider Maximum="100" Minimum="0"
                 x:Name="PorcentagemSlider"
