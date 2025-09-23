@@ -17,10 +17,7 @@
             <Entry 
                   x:Name="ValorTotalEntry"
                   Placeholder="Digite o valor total"/>
-
-
-          
-
+            
                <Label
               Text=" Gorjeta" />
 
@@ -28,9 +25,7 @@
               x:Name =" ValorGorjeta"
                Text="00.00" />
 
-
-
-            <Label
+              <Label
                Text=" Total" />
 
               <Label      

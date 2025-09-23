@@ -32,6 +32,7 @@ namespace TipTime
             try 
             {
                 double porcentagem = PorcentagemSlider.Value;
+                PorcentagemLabel.Text = $"{porcentagem}";
                 double gorjeta;
                 double valortotal = double.Parse(ValorTotalEntry.Text);
                 gorjeta = valortotal * (porcentagem / 100);
@@ -39,16 +40,17 @@ namespace TipTime
                 //Convert e uma classe
                 //Parse é um metodo
                 double valorfinal = valortotal + gorjeta;
-               //ValorGorjeta.Text = $"R$ {gorjeta}";
-                ValorGorjeta.Text = gorjeta.ToString("c");
+               ValorGorjeta.Text = $"R$ {gorjeta}";
+              //  ValorGorjeta.Text = Math.Floor(gorjeta.ToString(""));
                 ValorFinal.Text = $"R$  {valorfinal}";
+               // PorcentagemLabel.Text = Convert.ToString(PorcentagemSlider.Value);
             }
             catch(Exception ex) 
             { 
                 //Toda vez que uso o comando Console.Writeline a saida vai para a consolena aba
                //output
               Console.WriteLine(ex.ToString());
-                //DisplayAlert("Erro", "Digitre um valor numerico", "OK");
+                 DisplayAlert("Erro", "Digitre um valor numerico", "OK");
             }
 
         }
@@ -61,13 +63,19 @@ namespace TipTime
 
     private void RoundD_Clicked(object sender, EventArgs e)
       {
-
+            double valorfinal = Convert.ToDouble(ValorTotalEntry.Text) ; 
+            double valorArendondadoDown = Math.Floor(valorfinal);
+            ValorFinal.Text= $" R$ {valorArendondadoDown}";
       }
 
        private void RooundU_Clicked(object sender, EventArgs e)
         {
-
+            double valorfinal = Convert.ToDouble(ValorTotalEntry.Text);
+            double valorArendondadoDown = Math.Ceiling(valorfinal);
+            ValorFinal.Text = $" R$ {valorArendondadoDown}";
         }
+
+        
 
         private void Porcentagem20Btn_Clicked(object sender, EventArgs e)
         {
